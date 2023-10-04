@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+        }
+        nav {
+            width: 17rem;
+            height: 100vh;
+            display: flex;
+            position: fixed;
+            flex-direction: column;
+            background-color: #BD5D38;
+            padding: 10px;
+            justify-content: space-around;
+        }
+        .navbar ul {
+            list-style-type: none;
+            align-items: center;
+            flex-direction: column;
+        }
+        .navbar li {
+            margin-bottom: 10px;
+        }
+        .navbar a {
+            text-decoration: none;
+            color: #fff;
+            padding: 10px 20px;
+        }
+        
+        .navbar a:hover {
+            text-decoration: underline;
+            color: #bf633f;
+        }
+        .content {
+            padding: 20px;
+            margin-left: 17rem;
+        }
+        .section {
+            padding: 20px;
+            scroll-margin-top: 2rem; 
+        }
+        #about { scroll-margin-top: 3rem; }
+        #experience { scroll-margin-top: 3rem; }
+        #education { scroll-margin-top: 3rem; }
+        #skills { scroll-margin-top: 3rem; }
+        #interests { scroll-margin-top: 3rem; }
+        #awards { scroll-margin-top: 3rem; }
+        .navbar img {
+            border-radius: 50%; 
+            width: 140px; 
+            height: 140px; 
+            object-fit: cover; 
+            border: 6px solid #ca7d60;
+        }
+        .letter1 {
+            color: #343A40;
+            font-size: 89px;
+            font-weight: 700;
+            font-family: "Saira Extra Condensed", sans-serif;
+            margin: 0;
+        }
+        .letter2 {
+            color: #bd5d38;
+            font-size: 89px;
+            font-weight: 700;
+            font-family: "Saira Extra Condensed", sans-serif;
+            margin: 0;
+        }
+        .letter3 {
+            color: #343A40;
+            font-family: "Saira Extra Condensed", sans-serif;
+        }
+        .letter4 {
+            color: #343A40;
+            font-family: 'Roboto', sans-serif;
+        }
+        .social-icons {
+            display: flex;
+            gap: 24px;
+            margin-top: 24px;
+        }
+
+        .social-icon {
+            color: #495057;
+            transition: color 0.3s;
+        }
+
+        .social-icon:hover {
+            color: #bd5d38;
+        }
+        #experience h2 {
+            color: #343A40;
+            font-size: 53.072px;
+            font-family: "Saira Extra Condensed", sans-serif;
+            margin: 0;
+        }
+        .experience-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .experience-item h3 {
+            color: #343a40;
+            font-family: 'Roboto', sans-serif;
+        }
+        .experience-item .subheading {
+            color: #6c757d;
+            margin-right: 10px;
+        }
+        .experience-item .date {
+            color: #be603c;
+            flex-basis: 100px;
+        }
+        #education h2 {
+            color: #343A40;
+            font-size: 53.072px;
+            font-family: "Saira Extra Condensed", sans-serif;
+            margin: 0;
+        }
+        .education-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .education-item h3 {
+            color: #343a40;
+            font-family: 'Roboto', sans-serif;
+        }
+        .education-item .subheading {
+            color: #6c757d;
+            margin-right: 10px;
+        }
+        .education-item .date {
+            color: #be603c;
+            flex-basis: 100px;
+        }
+        #skills h2 {
+            color: #343A40;
+            font-size: 53.072px;
+            font-family: "Saira Extra Condensed", sans-serif;
+            margin: 0;
+        }
+        .skills-category ul {
+            list-style-type: none;
+            padding-left: 0;
+            color: #8c949a;
+        }
+        .skills-category ul li::before {
+            content: "\2713";
+            color: #8c949a;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+        .skills-category h3 {
+            color: #6c757d;
+            font-family: 'Roboto', sans-serif;
+        }
+        .skills-icons {
+            display: flex;
+            gap: 24px;
+        }
+        .skills-icons img {
+            width: 56px;
+            height: 56px;
+            filter: grayscale(100%);
+        }
+        #interests h3 {
+            color: #323232;
+            font-family: "Saira Extra Condensed", sans-serif;
+            font-size: 53.072px;
+            margin: 0;
+        }
+        #interests p {
+            color: #8c949a;
+        }
+        #awards h2 {
+            color: #323232;
+            font-family: "Saira Extra Condensed", sans-serif;
+            font-size: 53.072px;
+            margin: 0;
+        }
+        #awards {
+            color: #8c949a;
+        }
+        .skills-icons i {
+            font-size: 42px;
+            margin: 0 0 16px;
+            color: #6c757d;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><img src="https://startbootstrap.github.io/startbootstrap-resume/assets/img/profile.jpg" alt="Profil Fotoğrafı"></li>
+            <li><a href="#about">ABOUT</a></li>
+            <li><a href="#experience">EXPERIENCE</a></li>
+            <li><a href="#education">EDUCATION</a></li>
+            <li><a href="#skills">SKILLS</a></li>
+            <li><a href="#interests">INTERESTS</a></li>
+            <li><a href="#awards">AWARDS</a></li>
+        </ul>
+    </nav>
+    <div class="content">
+        <div class="section" id="about">
+            <p class="aboutkısmı">
+                <span class="letter1">CLARENCE</span>
+                <span class="letter2">TAYLOR</span>
+            </p>
+            <p>   
+                <span class="letter3">3542 BERRY STREET · CHEYENNE WELLS, CO 80810 · (317) 585-8468 ·</span>
+                <span class="letter4" style="color: #bd5d38; text-decoration: underline;">NAME@EMAIL.COM</span>
+            </p>
+            <br>
+            <br>
+            <p>I am experienced in leveraging agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition.
+                <div class="social-icons">
+                    <a class="social-icon" href="#">
+                        <i class="fab fa-linkedin fa-3x"></i>
+                    </a>
+                    <a class="social-icon" href="#">
+                        <i class="fab fa-github fa-3x"></i>
+                    </a>
+                    <a class="social-icon" href="#">
+                        <i class="fab fa-twitter fa-3x"></i>
+                    </a>
+                    <a class="social-icon" href="#">
+                        <i class="fab fa-facebook-f fa-3x"></i>
+                    </a>
+                </div>
+            </p>
+        </div>
+        <div class="section" id="experience">
+            <h2>EXPERIENCE</h2>
+            <div class="experience-item">
+                <div class="experience-details">
+                    <h3>SENIOR WEB DEVELOPER</h3>
+                    <p class="subheading">INTELITEC SOLUTIONS</p>
+                    <p>
+                        Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring.
+                    </p>
+                </div>
+                <div class="date">
+                    <p>March 2013 - Present</p>
+                </div>
+            </div>
+            <div class="experience-item">
+                <div class="experience-details">
+                    <h3>WEB DEVELOPER</h3>
+                    <p class="subheading">INTELITEC SOLUTIONS</p>
+                    <p>
+                        Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line.
+                    </p>
+                </div>
+                <div class="date">
+                    <p>December 2011 - March 2013</p>
+                </div>
+            </div>
+            <div class="experience-item">
+                <div class="experience-details">
+                    <h3>JUNIOR WEB DESIGNER</h3>
+                    <p class="subheading">SHOUT! MEDIA PRODUCTIONS</p>
+                    <p>
+                        Podcasting operational change management inside of workflows to establish a framework. Taking seamless key performance indicators offline to maximise the long tail. Keeping your eye on the ball while performing a deep dive on the start-up mentality to derive convergence on cross-platform integration.
+                    </p>
+                </div>
+                <div class="date">
+                    <p>July 2010 - December 2011</p>
+                </div>
+            </div>
+            <div class="experience-item">
+                <div class="experience-details">
+                    <h3>WEB DESIGN INTERN</h3>
+                    <p class="subheading">SHOUT! MEDIA PRODUCTIONS</p>
+                    <p>
+                        Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI.
+                    </p>
+                </div>
+                <div class="date">
+                    <p>September 2008 - June 2010</p>
+                </div>
+            </div>
+        </div>
+        <div class="section" id="education">
+            <h2>EDUCATION</h2>
+            <div class="education-item">
+                <div class="education-details">
+                    <h3>UNIVERSITY OF COLORADO BOULDER</h3>
+                    <p class="subheading">BACHELOR OF SCIENCE</p>
+                    <p>Computer Science - Web Development Track</p>
+                    <p>GPA: 3.23</p>
+                </div>
+                <div class="date">
+                    <p>August 2006 - May 2010</p>
+                </div>
+            </div>
+            <div class="education-item">
+                <div class="education-details">
+                    <h3>JAMES BUCHANAN HIGH SCHOOL</h3>
+                    <p class="subheading">TECHNOLOGY MAGNET PROGRAM</p>
+                    <p>GPA: 3.56</p>
+                </div>
+                <div class="date">
+                    <p>August 2002 - May 2006</p>
+                </div>
+            </div>
+        </div>
+        <div class="section" id="skills">
+            <h2>SKILLS</h2>
+            <div class="skills-section">
+                <div class="skills-category">
+                    <h3>PROGRAMMING LANGUAGES & TOOLS</h3>
+                    <div class="skills-icons">
+                        <i class="fab fa-html5"></i>
+                        <i class="fab fa-css3-alt"></i>
+                        <i class="fab fa-js"></i>
+                        <i class="fab fa-angular"></i>                       
+                        <i class="fab fa-react"></i>
+                        <i class="fab fa-sass"></i>
+                        <i class="fab fa-wordpress"></i>
+                    </div>
+                </div>
+                <div class="skills-category">
+                    <h3>WORKFLOW</h3>
+                    <ul>
+                        <li>Mobile-First, Responsive Design</li>
+                        <li>Cross Browser Testing & Debugging</li>
+                        <li>Cross Functional Teams</li>
+                        <li>Agile Development & Scrum</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="section" id="interests">
+            <h2 style="color: #323232;">INTERESTS</h2>
+            <p>Apart from being a web developer, I enjoy most of my time being outdoors. In the winter, I am an avid skier and novice ice climber. During the warmer months here in Colorado, I enjoy mountain biking, free climbing, and kayaking.</p>
+            <p>When forced indoors, I follow a number of sci-fi and fantasy genre movies and television shows, I am an aspiring chef, and I spend a large amount of my free time exploring the latest technology advancements in the front-end web development world.</p>
+        </div>
+        <div class="section" id="awards">
+            <h2>AWARDS & CERTIFICATIONS</h2>
+            <ul class="fa-ul">
+                <li>
+                    <span class="fa-li">
+                        <i class="fas fa-trophy" style="color: yellow;"></i>
+                    </span>
+                    Google Analytics Certified Developer
+                </li>
+                <li>
+                    <span class="fa-li">
+                        <i class="fas fa-trophy" style="color: yellow;"></i>
+                    </span>
+                    Mobile Web Specialist - Google Certification
+                </li>
+                <li>
+                    <span class="fa-li">
+                        <i class="fas fa-trophy" style="color: yellow;"></i>
+                    </span>
+                    1st Place - University of Colorado Boulder - Emerging Tech Competition 2009
+                </li>
+                <li>
+                    <span class="fa-li">
+                        <i class="fas fa-trophy" style="color: yellow;"></i>
+                    </span>
+                    1st Place - University of Colorado Boulder - Adobe Creative Jam 2008 (UI Design Category)
+                </li>
+                <li>
+                    <span class="fa-li">
+                        <i class="fas fa-trophy" style="color: yellow;"></i>
+                    </span>
+                    2nd Place - University of Colorado Boulder - Emerging Tech Competition 2008
+                </li>
+                <li>
+                    <span class="fa-li">
+                        <i class="fas fa-trophy" style="color: yellow;"></i>
+                    </span>
+                    1st Place - James Buchanan High School - Hackathon 2006
+                </li>
+                <li>
+                    <span class="fa-li">
+                        <i class="fas fa-trophy" style="color: yellow;"></i>
+                    </span>
+                    3rd Place - James Buchanan High School - Hackathon 2005
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
